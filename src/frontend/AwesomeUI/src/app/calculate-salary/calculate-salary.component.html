@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-header">
+    Calculate your Salary
+  </div>
+  <div class="card-body">
+    <div class="mb-3">
+      <div class="input-group flex-nowrap">
+
+        <input type="number" class="input-group-text" [value]="salary" [disabled]="isSalaryReadonly"
+          (input)="onSalaryInput($event)">
+        <button class="btn btn-outline-primary" [disabled]="!canUpdateSalary" (click)="onUpdateSalary()">
+          Update Salary
+        </button>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <!-- <label for="salaryfc" class="">Salary: </label>
+      <span class="input-group-text"  id="salaryfc">{{salary}}</span> -->
+
+      <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Salary:</span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+          aria-describedby="addon-wrapping" [value]="salary">
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<hr>
+
+
+
+<app-week-days [selectedDay]="parentSelectedDay"></app-week-days>
+
+<app-modal #modal [title]="modalTitle" [message]="modalMessage"></app-modal>

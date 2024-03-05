@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    Calculate your Salary
+  </div>
+  <div class="card-body">
+    <div class="mb-3">
+      <div class="input-group flex-nowrap">
+
+        <label class="form-control" for="dayFilter">Filter by day: </label>
+        <input type="text" class="form-control" id="dayFilter" [value]="selectedDay" (input)="onInputChange($event)" />
+      </div>
+    </div>
+
+    <div class="mb-3">
+
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let day of filterDays()">{{ day }}</li>
+      </ul>
+
+    </div>
+
+
+  </div>
+</div>
